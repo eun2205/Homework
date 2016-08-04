@@ -3,8 +3,6 @@ package example.tacademy.homework;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TabHost;
-import android.widget.Toast;
 
 /**
  * Created by Tacademy on 2016-08-02.
@@ -26,19 +24,19 @@ public class MainActivity extends AppCompatActivity{
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("TAB3"),
                 ThreeFragment.class, null);
         tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator("TAB4"),
-                ThreeFragment.class, null);
+                FourFragment.class, null);
         tabHost.addTab(tabHost.newTabSpec("tab5").setIndicator("TAB5"),
-                ThreeFragment.class, null);
+                FiveFragment.class, null);
 
 
-        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String s) {
-                if ("tab1".equals(s)) {
-                    Toast.makeText(MainActivity.this, "tab1 click", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+//            @Override
+//            public void onTabChanged(String s) {
+//                if ("tab1".equals(s)) {
+//                    Toast.makeText(MainActivity.this, "tab1 click", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
         tabHost.setCurrentTabByTag("tab1");
     }

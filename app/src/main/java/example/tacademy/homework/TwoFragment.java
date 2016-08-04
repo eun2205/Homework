@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by Tacademy on 2016-08-02.
  */
-public class TwoFragment extends Fragment{
+public class TwoFragment extends Fragment {
     public TwoFragment() {
     }
 
@@ -20,9 +20,14 @@ public class TwoFragment extends Fragment{
         setHasOptionsMenu(true);
     }
 
+  //  FragmentTabHost tabHost;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_two, container, false);
+//        tabHost = (FragmentTabHost) view.findViewById(R.id.tabhost);
+//        tabHost.setup(getContext(), getChildFragmentManager(), android.R.id.tabcontent);
+        return view;
     }
 }
