@@ -17,15 +17,15 @@ public class MainActivity extends AppCompatActivity{
         tabHost = (FragmentTabHost)findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
-        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("TAB1"),
+        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("", getResources().getDrawable(R.drawable.sample_1)),
                 OneFragment.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("TAB2"),
+        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("", getResources().getDrawable(R.drawable.sample_2)),
                 TwoFragment.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("TAB3"),
+        tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("", getResources().getDrawable(R.drawable.sample_3)),
                 ThreeFragment.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator("TAB4"),
+        tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator("", getResources().getDrawable(R.drawable.sample_4)),
                 FourFragment.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab5").setIndicator("TAB5"),
+        tabHost.addTab(tabHost.newTabSpec("tab5").setIndicator("", getResources().getDrawable(R.drawable.sample_5)),
                 FiveFragment.class, null);
 
 
