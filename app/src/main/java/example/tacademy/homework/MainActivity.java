@@ -1,5 +1,6 @@
 package example.tacademy.homework;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
@@ -7,14 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Created by Tacademy on 2016-08-02.
  */
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     FragmentTabHost tabHost;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tabHost = (FragmentTabHost)findViewById(R.id.tabhost);
+        tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
         tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("", getResources().getDrawable(R.drawable.sample_1)),
@@ -29,53 +31,28 @@ public class MainActivity extends AppCompatActivity{
                 FiveFragment.class, null);
 
 
-//        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-//            @Override
-//            public void onTabChanged(String s) {
-//                if ("tab1".equals(s)) {
-//                    Toast.makeText(MainActivity.this, "tab1 click", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-
         tabHost.setCurrentTabByTag("tab1");
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new ThreeFragment())
+                    .commit();
+        }
     }
 
+    public void changeSignup() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new OneFragment())
+                .addToBackStack(null)
+                .commit();
+    }
 
-
-//    public void receiveText(String text) {
-//        Fragment f = getSupportFragmentManager()
-//                .findFragmentByTag("tab3");
-//        if (f != null) {
-//            ((ThreeFragment)f).setMessage(text);
-//        } else {
-//            savedMessage = text;
-//        }
-//        tabHost.setCurrentTabByTag("tab3");
-//    }
-//
-//    public String getSavedMessage() {
-//        return savedMessage;
-//    }
-//
-//    String savedMessage = null;
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.activity_fragment_tab, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if( item.getItemId() == R.id.menu_am1) {
-//            Toast.makeText(this, "AM1 click", Toast.LENGTH_SHORT).show();
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-//}
-
+    public void moveActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
+
 
 
