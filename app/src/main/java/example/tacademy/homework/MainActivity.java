@@ -1,6 +1,5 @@
 package example.tacademy.homework;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
@@ -33,25 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
         tabHost.setCurrentTabByTag("tab1");
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new ThreeFragment())
-                    .commit();
-        }
     }
 
-    public void changeSignup() {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new OneFragment())
-                .addToBackStack(null)
-                .commit();
+    public void moveFragment() {
+        tabHost.setCurrentTabByTag("tab1");
     }
 
-    public void moveActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
 }
 
 

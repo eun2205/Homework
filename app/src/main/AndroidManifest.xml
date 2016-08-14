@@ -15,10 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".HelpActivity" />
         <activity
-            android:name=".PracticeActivity"
+            android:name=".LoginActivity"
             android:exported="true" />
-        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".DetailLoginActivity" />
+        <activity android:name=".FindPasswordActivity" />
+        <activity android:name=".OptionActivity" />
+        <activity android:name=".SignupActivity"></activity>
     </application>
 
 </manifest>

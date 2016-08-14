@@ -42,8 +42,7 @@ public class ThreeFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), OneFragment.class);
-                startActivity(intent);
+                ((MainActivity)getActivity()).moveFragment();
             }
         });
         return view;
