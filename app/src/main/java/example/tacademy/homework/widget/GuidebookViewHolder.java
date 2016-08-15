@@ -9,18 +9,18 @@ import example.tacademy.homework.R;
 /**
  * Created by Administrator on 2016-08-15.
  */
-public class AirbnbRecommendView extends FrameLayout {
-    public AirbnbRecommendView(Context context) {
+public class GuidebookViewHolder extends FrameLayout{
+    public GuidebookViewHolder(Context context) {
         super(context);
         init();
     }
 
-    public AirbnbRecommendView(Context context, AttributeSet attrs) {
+    public GuidebookViewHolder(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_airbnb_recommend, this);
+        inflate(getContext(), R.layout.view_guidebook, this);
     }
 }

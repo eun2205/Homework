@@ -1,5 +1,6 @@
 package example.tacademy.homework;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -85,6 +87,13 @@ public class TwoFragment extends Fragment {
                 "오사카", "방콕", "자다르"};
         mAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
         listView.setAdapter(mAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getContext(), FindPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }
